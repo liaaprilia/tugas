@@ -8,11 +8,12 @@
 </head>
 <body>
 	<div class="tablink" style="margin-bottom: 20px;">
-		<button class="tablink" onclick="openPage('Home', this, 'red')">Home</button>
+		<button class="tablink" onclick="openPage('Home', this, 'green')">Home</button>
 		<button class="tablink" onclick="openPage('Portofolio', this, 'green')" id="defaultOpen">Portofolio</button>
-		<button class="tablink" onclick="openPage('Gallery', this, 'blue')">Gallery</button>
-		<button class="tablink" onclick="openPage('Educational Background', this, 'orange')">Educational Background</button>
-		<button class="tablink" onclick="openPage('Website 101', this, 'orange')">Website 101</button>
+		<button class="tablink" onclick="openPage('Gallery', this, 'green')">Gallery</button>
+		<button class="tablink" onclick="openPage('Educational Background', this, 'green')">Educational Background</button>
+		<button class="tablink" onclick="openPage('Website 101', this, 'green')">Website 101</button>
+		<button class="tablink" onclick="openPage('Statistics', this, 'green')">Statistics</button>
 	</div>
 	<div id="Home" class="tabcontent">
 		<h1 style="color:#1b5e20">
@@ -43,7 +44,7 @@
 			</tr>
 			<tr>
 				<th>NIM</th>
-				<td>D04171317</td>
+				<td>D041171317</td>
 			</tr>
 		</table>
 		<div id="Photo" class="Gambar">
@@ -127,58 +128,42 @@
 			<br />
 			Hyperlinking between web pages conveys to the reader the site structure and guides the navigation of the site, which often starts with a home page containing a directory of the site web content. Some websites require user registration or subscription to access content. Examples of subscription websites include many business sites, news websites, academic journal websites, gaming websites, file-sharing websites, message boards, web-based email, social networking websites, websites providing real-time stock market data, as well as sites providing various other services. End users can access websites on a range of devices, including desktop and laptop computers, tablet computers, smartphones and smart TVs.
 		</p>
-		<h5 style="color:black" style="font-size:15px">
+		<h6 style="color:black" style="font-size:15px">
 			<i>Source: Wikipedia.org</i>
-		</h5>
+		</h6>
 	</div>
-
-	<script>
-		function openPage(pageName,elmnt,color) {
-			var i, tabcontent, tablinks;
-			tabcontent = document.getElementsByClassName("tabcontent");
-			for (i = 0; i < tabcontent.length; i++) {
-				tabcontent[i].style.display = "none"; 
-			}
-			tablinks = document.getElementsByClassName("tablink");
-
-			for (i = 0; i < tablinks.length; i++) {
-				tablinks[i].style.backgroundColor = ""; 
-			}
-			document.getElementById(pageName).style.display = "block";
-			elmnt.style.backgroundColor = color; 
-		}
-
-		document.getElementById("defaultOpen").click();
-
-		var slideIndex = 1;
-		showSlides(slideIndex);
-
-		function plusSlides(n) {
-			showSlides(slideIndex += n);
-		}
-
-		function currentSlide(n) {
-			showSlides(slideIndex = n);
-		}
-
-		function showSlides(n) {
-			var i;
-			var slides = document.getElementsByClassName("mySlides");
-			var dots = document.getElementsByClassName("dot");
-			if (n > slides.length) {
-				slideIndex = 1
-			}    
-			if (n < 1) {slideIndex = slides.length}
-				for (i = 0; i < slides.length; i++) {
-					slides[i].style.display = "none";  
-				}
-				for (i = 0; i < dots.length; i++) {
-					dots[i].className = dots[i].className.replace(" active", "");
-				}
-				slides[slideIndex-1].style.display = "block";
-				dots[slideIndex-1].className += " active";
-			}
-		</script>
-
+	<div id="Statistics" class="tabcontent">
+		<h7 style="color:#1b5e20">
+			<b>Statistics (Mean, Modus, Median, Max, Min)</b>
+		</h7>
+		<table>
+            <tr>
+                <td>Nilai A</td>
+                <td>:</td>
+                <td><input type="text" name="nilaia" id="nilaia" /></td>
+            </tr>
+            <tr>
+                <td>Nilai B</td>
+                <td>:</td>
+                <td><input type="text" name="nilaib" id="nilaib" /></td>
+            </tr>
+            <tr>
+                <td>Nilai C</td>
+                <td>:</td>
+                <td><input type="text" name="nilaic" id="nilaic" /></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+            <td style="padding-top:20px;">
+                <button type="button" id="calculate" onclick="calculate();">Calculate</button>
+                <button type="submit" id="clear" onclick="clear();">Clear</button>
+            </td>
+            </tr>
+        </table>
+        <div id="Calculation" style="margin-top: 20px;"> </div>
+	</div>
+			
+	<script type="text/javascript" src="filejs.js"></script>
 	</body>
 	</html>
